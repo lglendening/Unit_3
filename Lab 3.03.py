@@ -250,8 +250,6 @@ player2_deck = deck[26:]
 
 
 
-
-
 name = input("Enter your name: ")
 deck = shuffled_deck()
 
@@ -261,11 +259,9 @@ player_score = 0
 computer_score = 0
 points_at_stake = 2
 
+reset = True
 
-
-
-
-while len(player1_deck) > 0:
+while reset:
     input("press enter to play next round. ")
     print()
     print()
@@ -289,6 +285,7 @@ while len(player1_deck) > 0:
         points_at_stake += 2
 
 
+
 print("game over no more cards")
 print(f"player's score: {player_score}")
 print(f"computer's score: {computer_score}")
@@ -296,3 +293,13 @@ if player_score > computer_score:
     print(f"{name} won with a score of, {player_score}!!!!!")
 elif computer_score > player_score:
     print(f"Computer won with a score of, {computer_score}!!!!!")
+
+#play again
+
+player_play_again = input("Would you like to play again? [y or n]")
+
+if player_play_again == "y":
+    print("Okay lets do this!")
+else:
+    print("Okay cya!")
+    reset = False
