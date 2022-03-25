@@ -9,6 +9,7 @@ Aliasing
 1.  Will updating b affect a? Explain why or why not?
 a = [1, 2, 4]
 b = a
+a refrences 1,2,4 so b will refrence 1,2,4
 
 2.  Predict what my_list list will print out when this code is run. If you are not sure check the code by copying and running it.
 # input: a list of ints
@@ -20,8 +21,8 @@ def update_list(a_list):
 my_list = [1, 2, 3, 4, 5]
 update_list(my_list)
 
-Prediction:
-Actual: 
+Prediction: replaces 4 with "yo'
+Actual:     did that 
 
 Scope
 -----
@@ -68,6 +69,8 @@ def print_out_my_favorite(favorite_pet):
 ​
 print_out_my_favorite(var_1)
 print(var_2)
+
+
 
 Problem 2
 ---------
@@ -126,3 +129,24 @@ prints the final value of my_num
 
 Confirm that the printed values match what you expected.
 '''
+my_num = 10
+print(my_num)
+
+def add2():
+    global my_num
+    my_num += 2
+
+
+def multiply_num(multiplyer):
+    global my_num
+    my_num *= multiplyer
+
+
+def add_2_and_multiply(num):
+    pass
+
+add2()
+
+multiply_num(2)
+
+print(my_num)
