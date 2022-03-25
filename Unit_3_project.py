@@ -53,6 +53,8 @@ def help():
 def status():
     print(f"It is {MONTHS[current_month]} {current_day}")
     print(f"You currently have {str(player_health)} health remaning.")
+    print (f" You have {pounds_of_food} left.")
+    print (f" You have {miles_left_in_the_trip} miles to go!")
 
 #player gets hurt
 def hurt():
@@ -112,6 +114,13 @@ def rest():
         print (f"You rested and gained 1 health in the span of {days} days.")
     else:
         print("You already have 5 maximum health.")
+
+def consume_food(days):
+    global pounds_of_food
+
+    food_consumed_this_turn = 5 * days
+
+    
 
 
 
