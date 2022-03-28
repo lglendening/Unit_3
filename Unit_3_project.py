@@ -5,10 +5,13 @@ from glob import glob
 import random
 
 #begining story
+print()
+print()
+print("__________________________________________________STORY____________________________________________________________________")
 print(" You are a farmer who wants to go start a new life. You go from Independance, MO and are making the dangerous journey.")
 print(" To Oregon using the Oregon Trail. You may come across danger but it could be sunshines and rainbows.")
 print(" You need to get there before the insane winter starts which is 12/31 Well lets get this 2000 miles journey started!")
-
+print()
 
 
 
@@ -69,11 +72,12 @@ def eat_food():
 #travels the player miles
 def travel():
     global miles_left_in_the_trip
+    consume_food(days)
     days = random.randint(3, 7)
     miles_traveled = random.randint(30, 60)
     miles_left_in_the_trip -= miles_traveled
     print (f"You took {days} days to travel {miles_traveled} miles.")
-    print(f" You have {miles_left_in_the_trip}.")
+    print(f" You have {miles_left_in_the_trip} miles left in your trip to Oregon.")
     add_day(days)
 
 
@@ -110,10 +114,15 @@ def rest():
     if player_health < 5:
         days = random.randint(2, 5)
         add_day(days)
+        consume_food(days)
         player_health += 1
         print (f"You rested and gained 1 health in the span of {days} days.")
-    else:
-        print("You already have 5 maximum health.")
+    elif player_health == 5:
+        days = random.randint(2, 5)
+        add_day(days)
+        consume_food(days)
+        print (f"You wasted days and food because your already at the 5 maximum health dummy.")
+
 
 def consume_food(days):
     global pounds_of_food
