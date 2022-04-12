@@ -40,6 +40,7 @@ MONTHS = [
 MONTHS_WITH_30_DAYS = ["April", "June", "September", "November"]
 
 
+
 #FUNCTIONS
 
 #ask the program for help
@@ -56,7 +57,7 @@ def help():
 def status():
     print(f"It is {MONTHS[current_month]} {current_day}")
     print(f"You currently have {str(player_health)} health remaning.")
-    print (f" You have {pounds_of_food} left.")
+    print (f" You have {pounds_of_food} pounds of food left.")
     print (f" You have {miles_left_in_the_trip} miles to go!")
 
 #player gets hurt
@@ -72,8 +73,8 @@ def eat_food():
 #travels the player miles
 def travel():
     global miles_left_in_the_trip
-    consume_food(days)
     days = random.randint(3, 7)
+    consume_food(days)
     miles_traveled = random.randint(30, 60)
     miles_left_in_the_trip -= miles_traveled
     print (f"You took {days} days to travel {miles_traveled} miles.")
@@ -132,12 +133,9 @@ def consume_food(days):
     
 
 
-
-
-
-
-game_over = True
 #game loop 
+game_over = True
+
 while game_over is True:
     print()
     print("------------New Day------------")
@@ -148,10 +146,11 @@ while game_over is True:
         )
 
 
+
+
+
     #player eats 5lbs. of food
     eat_food()
-
-
 
     #player chooses what they want to do.
     players_choice = input("What would you like to do? [travel, rest, hunt, status, help, or quit.] ")
